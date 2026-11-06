@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rankings - FlipMind</title>
+
+    <!-- Orbitron font and the shared stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- Site header and navigation bar -->
+        <header class="site-header">
+            <h1 class="logo">Flip<span>Mind</span></h1>
+
+            <nav>
+                <!-- Links for logged-in users (shown by JavaScript after the login check) -->
+                <div class="nav-left" hidden>
+                    <a href="../index.html">Home</a>
+                    <a href="game.html">Play Game</a>
+                    <a href="rankings.html" class="active">Rankings</a>
+                </div>
+
+                <!-- Guest links; when a user is logged in, JavaScript replaces them with their name and a Logout link -->
+                <div class="nav-right">
+                    <a href="register.html">Register</a>
+                    <a href="login.html">Login</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main content -->
+        <main class="rankings-main">
+            <section class="rankings-container">
+                <img
+                    class="hero-background"
+                    src="../images/Raking_background.png"
+                    alt=""
+                >
+
+                <p class="rankings-label">FLIPMIND LEADERBOARD</p>
+
+                <h2 class="hero-title">Top <span>Rankings</span></h2>
+
+                <p class="hero-description">
+                    Compete with other players and become a Memory Master.
+                </p>
+
+                <!-- Rankings table (rows are loaded from localStorage by JavaScript) -->
+                <div class="rankings-panel">
+
+                    <div class="rankings-panel-header">
+                        <h3>Top Players</h3>
+                        <span>ALL PLAYERS</span>
+                    </div>
+
+                    <div class="rankings-table-wrapper">
+                        <table class="rankings-table">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Username</th>
+                                    <th>Highest Level</th>
+                                    <th>Total Moves</th>
+                                    <th>Total Score</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="rankings-body">
+                                <tr>
+                                    <td colspan="5" class="empty-rankings">
+                                        Loading rankings...
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Explains the sample players added by js/demo-players.js -->
+                    <p class="rankings-note">
+                        Players marked Demo are sample players included to show how the rankings work.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 CST2120 Game App</p>
+        </footer>
+
+    </div>
+
+    <!-- Scripts: a local-server warning, then the page's JavaScript module -->
+    <script src="../js/file-warning.js"></script>
+    <script type="module" src="../js/pages/rankings.js"></script>
+</body>
+
+</html>

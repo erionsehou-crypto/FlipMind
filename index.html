@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FlipMind</title>
+
+    <!-- Orbitron font and the shared stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- Site header and navigation bar -->
+        <header class="site-header">
+            <h1 class="logo">Flip<span>Mind</span></h1>
+
+            <nav>
+                <!-- Links for logged-in users (shown by JavaScript after the login check) -->
+                <div class="nav-left" hidden>
+                    <a href="index.html" class="active">Home</a>
+                    <a href="html/game.html">Play Game</a>
+                    <a href="html/rankings.html">Rankings</a>
+                </div>
+
+                <!-- Guest links; when a user is logged in, JavaScript replaces them with their name and a Logout link -->
+                <div class="nav-right">
+                    <a href="html/register.html">Register</a>
+                    <a href="html/login.html">Login</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main content -->
+        <main>
+            <!-- Hero section -->
+            <img
+                class="hero-background"
+                src="images/flipmind-background02.png"
+                alt=""
+            >
+
+            <div class="hero-content">
+                <p class="hero-label">READY TO TEST YOUR MEMORY?</p>
+
+                <h2 class="hero-title">Flip<span>Mind</span></h2>
+
+                <p class="hero-description">
+                    Test your memory, beat your best score and climb the rankings.
+                </p>
+
+                <button type="button" id="play-game-button">Play Game →</button>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 CST2120 Game App</p>
+        </footer>
+
+    </div>
+
+    <!-- Scripts: a local-server warning, then the page's JavaScript module -->
+    <script src="js/file-warning.js"></script>
+    <script type="module" src="js/pages/home.js"></script>
+</body>
+
+</html>

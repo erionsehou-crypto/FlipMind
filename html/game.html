@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Game - FlipMind</title>
+
+    <!-- Orbitron font and the shared stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- Site header and navigation bar -->
+        <header class="site-header">
+            <h1 class="logo">Flip<span>Mind</span></h1>
+
+            <nav>
+                <!-- Links for logged-in users (shown by JavaScript after the login check) -->
+                <div class="nav-left" hidden>
+                    <a href="../index.html">Home</a>
+                    <a href="game.html" class="active">Play Game</a>
+                    <a href="rankings.html">Rankings</a>
+                </div>
+
+                <!-- Guest links; when a user is logged in, JavaScript replaces them with their name and a Logout link -->
+                <div class="nav-right">
+                    <a href="register.html">Register</a>
+                    <a href="login.html">Login</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main content -->
+        <main class="game-main">
+            <img
+                class="hero-background"
+                src="../images/game_background.png"
+                alt=""
+            >
+
+            <!-- Memory game (hidden until the game module confirms the player is logged in) -->
+            <section class="game-container" hidden>
+
+                <h2 class="hero-title">Memory <span>Game</span></h2>
+
+                <p class="hero-description">
+                    Complete all 5 levels and become a Memory Master!
+                </p>
+
+                <!-- Level selection (buttons are created by JavaScript) -->
+                <h3 class="level-heading">SELECT LEVEL</h3>
+
+                <div id="level-select" class="level-select"></div>
+
+                <p id="level-status" class="level-status">
+                    Level 1 is ready to play!
+                </p>
+
+                <!-- Game statistics and sound setting -->
+                <div class="game-info">
+                    <p>Level: <span id="current-level">1</span> / 5</p>
+                    <p>Mistakes: <span id="mistakes">0 / 12</span></p>
+                    <p>Pairs: <span id="pairs">0 / 8</span></p>
+                    <p>Last score: <span id="last-score">-</span></p>
+
+                    <button type="button" id="sound-toggle" class="sound-toggle" aria-pressed="true">
+                        🔊 Sound: On
+                    </button>
+                </div>
+
+                <!-- Phaser game canvas: the animated mascot and the card grid are drawn here -->
+                <div class="game-board" id="game-board"></div>
+
+                <button type="button" id="start-button">
+                    Start Game
+                </button>
+
+                <p id="game-message" aria-live="polite"></p>
+
+            </section>
+
+        </main>
+
+        <!-- Confetti, stars and the win banner are drawn here by Phaser
+             (the layer covers the page but never blocks clicks) -->
+        <div id="celebration-layer" class="celebration-layer" aria-hidden="true"></div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 CST2120 Game App</p>
+        </footer>
+
+    </div>
+
+    <!-- Scripts: a local-server warning, the Phaser 3 game engine (third-party,
+         from the jsDelivr CDN), then the page's JavaScript module -->
+    <script src="../js/file-warning.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.min.js"></script>
+    <script type="module" src="../js/game/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - FlipMind</title>
+
+    <!-- Orbitron font and the shared stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- Site header and navigation bar -->
+        <header class="site-header">
+            <h1 class="logo">Flip<span>Mind</span></h1>
+
+            <nav>
+                <!-- Links for logged-in users (shown by JavaScript after the login check) -->
+                <div class="nav-left" hidden>
+                    <a href="../index.html">Home</a>
+                    <a href="game.html">Play Game</a>
+                    <a href="rankings.html">Rankings</a>
+                </div>
+
+                <!-- Guest links; when a user is logged in, JavaScript replaces them with their name and a Logout link -->
+                <div class="nav-right">
+                    <a href="register.html">Register</a>
+                    <a href="login.html" class="active">Login</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main content -->
+        <main class="login-main">
+            <img
+                class="hero-background"
+                src="../images/Login_background.png"
+                alt=""
+            >
+
+            <div class="hero-content">
+
+                <h2 class="hero-title">Welcome <span>Back</span></h2>
+
+                <!-- Login form (validated with JavaScript) -->
+                <form id="login-form" novalidate>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" autocomplete="email">
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" autocomplete="current-password">
+
+                    <button type="submit">Login</button>
+
+                    <!-- Validation and login messages -->
+                    <div id="form-message" class="form-message" aria-live="polite"></div>
+
+                </form>
+
+                <p class="hero-description">
+                    Don't have an account?
+                    <a href="register.html">Register here</a>
+                </p>
+
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 CST2120 Game App</p>
+        </footer>
+
+    </div>
+
+    <!-- Scripts: a local-server warning, then the page's JavaScript module -->
+    <script src="../js/file-warning.js"></script>
+    <script type="module" src="../js/pages/login.js"></script>
+</body>
+
+</html>
